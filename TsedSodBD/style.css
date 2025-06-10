@@ -280,18 +280,203 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* Responsive design */
-    @media (max-width: 600px) {
+    /* Advanced Responsive Design */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+      
       .card {
-        padding: 30px 20px;
+        padding: 25px 15px;
+        margin: 10px;
+        max-width: 95%;
+        border-radius: 20px;
+      }
+      
+      h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+      }
+      
+      h2 {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+      
+      p {
+        font-size: 1em;
+        margin: 1em 0;
+        line-height: 1.6;
+      }
+      
+      .party-details {
+        padding: 20px 15px;
+        margin: 20px 0;
+        border-radius: 15px;
+      }
+      
+      .party-details p {
+        font-size: 0.95em;
+      }
+      
+      button.rsvp {
+        padding: 15px 30px;
+        font-size: 1em;
+        letter-spacing: 1px;
+      }
+      
+      .overlay input {
+        width: 260px;
+        padding: 12px 20px;
+        font-size: 1em;
+      }
+      
+      .overlay button {
+        padding: 12px 30px;
+        font-size: 1em;
+      }
+      
+      .overlay h2 {
+        font-size: 1.4em;
+        margin-bottom: 25px;
+        text-align: center;
+        padding: 0 20px;
+      }
+      
+      .thanks {
+        font-size: 1em;
+        padding: 15px;
+        margin-top: 20px;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      .card {
+        padding: 40px 30px;
         margin: 20px;
+        max-width: 90%;
+      }
+      
+      h1 {
+        font-size: 2.5em;
+      }
+      
+      .overlay input {
+        width: 320px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .card {
+        max-width: 600px;
+        padding: 55px 45px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .card {
+        max-width: 650px;
+        padding: 60px 50px;
+      }
+    }
+
+    /* Ultra-wide screens */
+    @media (min-width: 1400px) {
+      body {
+        font-size: 18px;
+      }
+      
+      .card {
+        max-width: 700px;
+        padding: 70px 60px;
+      }
+      
+      h1 {
+        font-size: 3.5em;
+      }
+    }
+
+    /* Portrait orientation adjustments */
+    @media (orientation: portrait) and (max-height: 600px) {
+      body {
+        align-items: flex-start;
+        padding-top: 20px;
+      }
+      
+      .card {
+        margin: 20px auto;
+      }
+    }
+
+    /* Landscape mobile adjustments */
+    @media (orientation: landscape) and (max-height: 500px) {
+      .overlay h2 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+      }
+      
+      .overlay input,
+      .overlay button {
+        margin-bottom: 10px;
+      }
+      
+      .card {
+        padding: 30px;
+        transform: scale(0.9);
       }
       
       h1 {
         font-size: 2.2em;
+        margin-bottom: 10px;
       }
       
-      .overlay input {
-        width: 280px;
+      .party-details {
+        padding: 20px;
+        margin: 15px 0;
+      }
+    }
+
+    /* High DPI screens */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .card::before {
+        animation-duration: 2s;
+      }
+      
+      .firework {
+        width: 6px;
+        height: 6px;
+      }
+    }
+
+    /* Reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .fireworks {
+        display: none;
+      }
+      
+      .bg-particles {
+        display: none;
+      }
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      .card {
+        background: rgba(30, 30, 30, 0.95);
+        color: #e0e0e0;
+      }
+      
+      h2 {
+        color: #e0e0e0;
+      }
+      
+      p {
+        color: #b0b0b0;
       }
     }
