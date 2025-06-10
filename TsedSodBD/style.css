@@ -225,8 +225,7 @@
     }
     #abc{
         height: 40px;
-        padding-left: 55px;
-        text-align: left;
+        text-align: center;
     }
 
     .party-details strong {
